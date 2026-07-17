@@ -1,569 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Event Gallery | Master Tent Material Manufactures</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exquisite Event Gallery | Master Tent Material Manufactures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Outfit', sans-serif; background: #ffffff; color: #1e293b; line-height: 1.7; }
 
-<style>
+        /* Navigation */
+        nav { background: rgba(255, 255, 255, 0.95); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #f1f5f9; }
+        .logo { font-weight: 700; font-size: 1.6rem; color: #0f172a; text-decoration: none; letter-spacing: -0.5px; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #475569; font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
+        .nav-links a:hover { color: #0f172a; }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        /* Hero Section */
+        header { padding: 100px 20px; text-align: center; background: #f8fafc; }
+        header h1 { font-size: 3.5rem; margin-bottom: 15px; color: #0f172a; }
+        header p { font-size: 1.2rem; color: #64748b; max-width: 600px; margin: 0 auto; }
 
-body{
-    font-family:Poppins,sans-serif;
-    background:#f5f7fa;
-}
+        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
 
-header{
-    background:linear-gradient(135deg,#2563eb,#06b6d4);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
+        /* Gallery Grid */
+        .gallery-header { margin-bottom: 40px; }
+        .gallery-header h2 { font-size: 2rem; margin-bottom: 10px; }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 25px;
+        }
 
-header h1{
-    font-size:45px;
-    margin-bottom:10px;
-}
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+        }
 
-header p{
-    font-size:18px;
-}
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-.container{
-    width:90%;
-    max-width:1300px;
-    margin:50px auto;
-}
+        .gallery-item:hover img { transform: scale(1.08); }
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+        /* Lightbox */
+        .lightbox { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; backdrop-filter: blur(10px); }
+        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 12px; }
+        .close-btn { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 3rem; cursor: pointer; }
 
-.gallery-item{
-    overflow:hidden;
-    border-radius:20px;
-    background:white;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-    transition:.4s;
-}
-
-.gallery-item:hover{
-    transform:translateY(-10px);
-}
-
-.gallery-item img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    transition:.5s;
-}
-
-.gallery-item:hover img{
-    transform:scale(1.1);
-}
-
-.back{
-    display:inline-block;
-    margin:50px auto;
-    padding:15px 35px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:40px;
-    transition:.3s;
-}
-
-.back:hover{
-    background:#06b6d4;
-}
-
-.center{
-    text-align:center;
-}
-
-footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-</style>
-
+        footer { text-align: center; padding: 80px 20px; background: #0f172a; color: #94a3b8; }
+        footer h3 { color: #fff; margin-bottom: 10px; }
+    </style>
 </head>
+
 <body>
 
-<header>
-
-<h1>Our Complete Event Gallery</h1>
-
-<p>
-Explore our beautiful wedding, tent and event setups.
-</p>
-
-</header>
-
-<div class="container">
-
-<div class="gallery">
-
-<div class="gallery-item">
-<img src="../images/gallery1.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-<img src="../images/gallery2.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-<img src="../images/gallery3.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-<img src="../images/gallery4.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-<img src="../images/gallery5.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-<img src="../images/gallery6.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-<img src="../images/gallery7.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-<img src="../images/gallery8.jpg" alt="">
-</div>
-
-<!-- New Photos -->
-
-<div class="gallery-item">
-    <img src="../images/event1.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event2.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event3.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event4.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event5.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event6.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event7.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event8.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event9.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event10.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event11.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event12.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event13.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event14.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event15.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event16.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event17.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event18.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event19.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event20.jpg" alt="">
-</div>
-<div class="gallery-item">
-    <img src="../images/event21.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event22.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event23.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event24.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event25.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event26.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event27.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event28.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event29.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event30.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event31.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event32.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event33.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event34.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event35.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event36.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event37.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event38.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event39.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event40.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event41.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event42.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event43.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event44.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event45.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event46.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event47.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event48.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event49.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event50.jpg" alt="">
-</div>
-<div class="gallery-item">
-    <img src="../images/event51.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event52.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event53.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event54.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event55.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event56.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event57.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event58.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event59.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event60.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event61.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event62.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event63.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event64.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event65.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event66.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event67.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event68.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event69.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event70.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event71.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event72.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event73.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event74.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event75.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event76.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event77.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event78.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event79.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event80.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event81.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event82.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event83.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event84.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event85.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event86.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event87.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event88.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event89.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event90.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event91.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event92.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event93.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event94.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event95.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event96.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event97.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event98.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event99.jpg" alt="">
-</div>
-
-<div class="gallery-item">
-    <img src="../images/event100.jpg" alt="">
-</div>
-</div>
-
-<div class="center">
-
-<a href="../index.html" class="back">
-← Back to Home
-</a>
-
-</div>
-
-</div>
-
-<footer>
-
-© 2026 Master Tent Material Manufactures<br>
-National Highway, Kalibari, Kathua, Jammu & Kashmir - 184101
-
-</footer>
-
+    <nav>
+        <a href="../index.html" class="logo">Master Tent Material Manufacturers</a>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Crafting Unforgettable Moments</h1>
+        <p>From grand weddings to corporate galas, our premium tenting solutions provide the perfect canvas for your most cherished events.</p>
+    </header>
+
+    <div class="container">
+        <div class="gallery-header">
+            <h2>Our Signature Installations</h2>
+            <p>A glimpse into our craftsmanship and attention to detail.</p>
+        </div>
+        
+        <div class="gallery">
+            <div class="gallery-item"><img src="../images/gallery1.jpg" alt="Luxury Wedding Setup" loading="lazy"></div>
+            <div class="gallery-item"><img src="../images/gallery2.jpg" alt="Grand Corporate Event" loading="lazy"></div>
+            <div class="gallery-item"><img src="../images/gallery3.jpg" alt="Outdoor Event Canopy" loading="lazy"></div>
+            <div class="gallery-item"><img src="../images/gallery4.jpg" alt="Premium Tent Decor" loading="lazy"></div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Master Tent Material Manufactures</h3>
+        <p>Elevating events with world-class quality since 2026.</p>
+        <p style="margin-top: 20px; font-size: 0.85rem;">National Highway, Kalibari, Kathua, Jammu & Kashmir - 184101</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeImage()">&times;</span>
+        <img id="lightbox-img" src="" alt="Zoomed view">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        document.querySelectorAll(".gallery-item img").forEach(img => {
+            img.onclick = () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = img.src;
+            };
+        });
+
+        function closeImage() { lightbox.style.display = "none"; }
+        lightbox.onclick = (e) => { if (e.target !== lightboxImg) closeImage(); }
+    </script>
 </body>
 </html>
